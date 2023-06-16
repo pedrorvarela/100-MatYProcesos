@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pago</title>
+  <style>
+    /* Estilos CSS para la sección de pago */
+    .seccion-pago {
+      text-align: center;
+      margin: 50px auto;
+    }
+    
+    .seccion-pago h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .seccion-pago p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .seccion-pago form {
+      display: inline-block;
+      text-align: left;
+    }
+    
+    .seccion-pago label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .seccion-pago input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .seccion-pago button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .seccion-pago #mensaje-pago {
+      display: none;
+      font-size: 18px;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="seccion-pago">
+    <h2>Pago</h2>
+    <p>Completa los datos de tu tarjeta de crédito:</p>
+  
+    <form id="formulario-pago">
+      <label for="nombre-tarjeta">Nombre en la tarjeta:</label>
+      <input type="text" id="nombre-tarjeta" required>
+    
+      <label for="numero-tarjeta">Número de tarjeta:</label>
+      <input type="text" id="numero-tarjeta" required>
+    
+      <label for="fecha-expiracion">Fecha de expiración:</label>
+      <input type="text" id="fecha-expiracion" required>
+    
+      <label for="codigo-seguridad">Código de seguridad:</label>
+      <input type="text" id="codigo-seguridad" required>
+    
+      <button type="submit" id="boton-pagar">Pagar</button>
+    </form>
+  
+    <p id="mensaje-pago">Tu pago ha sido realizado.</p>
+  </div>
+
+  <script>
+    document.getElementById('formulario-pago').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita el envío del formulario
+      
+      // Simulamos una solicitud de pago aquí, podrías realizar una solicitud real a través de AJAX o una API de pagos
+      
+      // Cambiamos el texto del botón y mostramos el mensaje de pago realizado
+      document.getElementById('boton-pagar').style.display = 'none';
+      document.getElementById('mensaje-pago').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
